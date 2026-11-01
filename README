@@ -1,0 +1,47 @@
+University Budget Analytics Dashboard
+
+An Excel + Power BI dashboard concept using sample university budget transactions.
+
+
+Files
+
+
+sample_budget_transactions.csv — sample credits and debits by department and date.
+
+department_budgets.csv — allocated budget for each department.
+
+measures.dax — DAX measures to create in Power BI.
+
+
+Build the dashboard in Power BI
+
+
+Open Power BI Desktop.
+
+Select Get Data → Text/CSV and import both CSV files.
+
+Set Date to the Date data type and Amount / AllocatedBudget to Decimal or Whole Number.
+
+Create a relationship from department_budgets[Department] to sample_budget_transactions[Department] (one-to-many).
+
+Add the DAX measures from measures.dax.
+
+Suggested visuals:
+Cards: Total Credit, Total Debit, Net Balance, Budget Utilised %.
+Clustered column chart: Department vs Total Debit.
+Line chart: Month vs Total Debit.
+Table: Department, Allocated Budget, Total Debit, Budget Utilised %.
+Slicers: Department, Date, Type.
+
+Apply conditional formatting to Budget Utilised % (for example, highlight values above 80%).
+
+
+Excel alternative
+
+Open the transactions CSV in Excel, format it as a table, create PivotTables by Department and Month, and add slicers for Department and Type.
+
+
+Note
+
+The CSV files contain illustrative sample data, not real university financial records. The dashboard is a reporting prototype.
+
