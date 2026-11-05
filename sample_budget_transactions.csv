@@ -1,0 +1,11 @@
+TransactionID,Department,Date,Type,Description,Amount
+T001,Computer Science,2026-01-10,Credit,Department grant,50000
+T002,Computer Science,2026-01-18,Debit,Lab equipment,18000
+T003,Computer Science,2026-02-05,Debit,Software licences,7000
+T004,Electronics,2026-01-12,Credit,Research grant,30000
+T005,Electronics,2026-01-25,Debit,Sensor kits,12000
+T006,Electronics,2026-02-14,Debit,Project components,9000
+T007,Mechanical,2026-01-15,Credit,Workshop allocation,25000
+T008,Mechanical,2026-02-02,Debit,Machine maintenance,8000
+T009,Civil,2026-01-20,Credit,Infrastructure grant,40000
+T010,Civil,2026-02-10,Debit,Survey equipment,14000

@@ -1,0 +1,27 @@
+"""
+Optional helper: prepare a monthly summary CSV from transactions_export.csv.
+Run after exporting transactions from Project 1:
+python prepare_dashboard_data.py
+"""
+import pandas as pd
+
+source = "transactions_export.csv"
+df = pd.read_csv(source)
+df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
+df["month"] = df["timestamp"].dt.to_period("M").astype(str)
+summary = (
+    df.pivot_table(
+        index=["department_name", "month"],
+        columns="transaction_type",
+        values="amount",
+        aggfunc="sum",
+        fill_value=0
+    )
+    .reset_index()
+)
+for column in ["credit", "debit"]:
+    if column not in summary.columns:
+        summary[column] = 0
+summary["net_transaction_amount"] = summary["credit"] - summary["debit"]
+summary.to_csv("monthly_department_summary.csv", index=False)
+print("Created monthly_department_summary.csv")
